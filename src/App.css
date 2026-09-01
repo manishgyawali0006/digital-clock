@@ -1,0 +1,374 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0f172a;
+}
+
+.page {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.85)),
+    url("https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #e2e8f0;
+  font-family: system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid #334155;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #34d399;
+}
+
+.nav a {
+  color: #94a3b8;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.nav a:hover {
+  color: #e2e8f0;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  color: #f1f5f9;
+}
+
+.hero p {
+  color: #94a3b8;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.app-section {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1.5rem 3rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 620px;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid #334155;
+  border-radius: 1rem;
+  padding: 2.25rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.about-section h2 {
+  margin-bottom: 0.75rem;
+  color: #f1f5f9;
+}
+
+.about-section p {
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.feature-card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid #334155;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+}
+
+.feature-card h3 {
+  margin: 0 0 0.5rem;
+  color: #34d399;
+  font-size: 1rem;
+}
+
+.feature-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid #334155;
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-top: auto;
+}
+
+.site-footer p {
+  margin: 0.35rem 0;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+.footer-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #34d399;
+}
+
+.footer-name {
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: #475569;
+  margin-top: 0.75rem;
+}
+
+.tabs {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 999px;
+  padding: 0.25rem;
+  display: flex;
+  margin: 0 auto 2rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.tab {
+  flex: 1;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  color: #e2e8f0;
+}
+
+.tab.active.tab-clock {
+  background: #10b981;
+  color: #0f172a;
+}
+
+.tab.active.tab-stopwatch {
+  background: #0ea5e9;
+  color: #0f172a;
+}
+
+.tab.active.tab-pomodoro {
+  background: #f43f5e;
+  color: #0f172a;
+}
+
+.clock-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.clock-time {
+  font-family: "Courier New", monospace;
+  letter-spacing: 0.1em;
+  font-size: 4.4rem;
+  font-weight: 700;
+  color: #34d399;
+  text-shadow: 0 0 18px rgba(52, 211, 153, 0.45);
+}
+
+.blink {
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.clock-date {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  letter-spacing: 0.02em;
+}
+
+.stopwatch-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.stopwatch-time {
+  font-family: "Courier New", monospace;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #38bdf8;
+  font-variant-numeric: tabular-nums;
+}
+
+.stopwatch-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.pomodoro-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.pomodoro-time {
+  font-family: "Courier New", monospace;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #f43f5e;
+  font-variant-numeric: tabular-nums;
+}
+
+.pomodoro-time.finished {
+  color: #fbbf24;
+}
+
+.pomodoro-message {
+  color: #fbbf24;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: -0.75rem;
+}
+
+.pomodoro-buttons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pomodoro-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pomodoro-edit label {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.pomodoro-input {
+  width: 100px;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.pomodoro-input:focus {
+  outline: none;
+  border-color: #f43f5e;
+}
+
+.btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #10b981;
+  color: #0f172a;
+}
+.btn-primary:hover {
+  background: #34d399;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+}
+.btn-secondary:hover {
+  background: #1e293b;
+}
+
+.btn-start {
+  background: #0ea5e9;
+  color: #0f172a;
+}
+.btn-start:hover {
+  background: #38bdf8;
+}
+
+.btn-pause {
+  background: #f59e0b;
+  color: #0f172a;
+}
+.btn-pause:hover {
+  background: #fbbf24;
+}
+
+.btn-reset {
+  background: #334155;
+  color: #f1f5f9;
+}
+.btn-reset:hover {
+  background: #475569;
+}
